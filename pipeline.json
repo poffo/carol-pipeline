@@ -1,0 +1,56 @@
+{
+    "defaults":
+    {
+        "cronExpressions":
+        [
+            "0 */5 0 ? * * *"
+        ],
+        "prepareScripts":
+        [
+            "prepare.sql"
+        ]
+    },
+    "pipelines":
+    [
+        {
+            "pipelineName": "clockin_pipeline",
+            "pipelineDescription": "Pipeline to process clockin records - test",
+            "outputDataModelName": "clockinrecords",
+            "overlapDeltaMinutes": 3600,
+            "saveToCds": true,
+            "saveToUnified": true,
+            "sendToSubscriptions": true,
+            "cronExpressions":
+            [
+                "0 5,15,25,35,45,55 * * * ?"
+            ],
+            "timeZone": "America/Sao_Paulo",
+            "prepareScripts":
+            [
+                "preparePipeline.sql"
+            ],
+            "processScript": "clockinrecords.sql",
+            "sourceEntities":
+            {
+                "dataModels":
+                [
+                ],
+                "stagings":
+                [
+                    {
+                        "connectorName": "clockinmobile",
+                        "stagingName": "clockinrecords"
+                    },
+                    {
+                        "connectorName": "clockinmobile",
+                        "stagingName": "device"
+                    },
+                    {
+                        "connectorName": "clockinmobile",
+                        "stagingName": "employee"
+                    }
+                ]
+            }
+        }
+    ]
+}
