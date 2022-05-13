@@ -4,8 +4,10 @@
     ] as clockinrecords
     ),
     c as (
-        select deviceCode, appname, "na" as piscode, clockinDatetime eventdatestr
-        from stg_clockinmobile_clockinrecords
+        select deviceCode, appname, "na" as piscode, clockinDatetime eventdatestr,
+             --metadata--
+        from stg_clockinmobile_clockinrecords stg
+            --timestamp-- WHERE stg.mdmCounterForEntity > {{start_from}}
     ),
     AC as (
         select * except(clockinrecords) from a, unnest (clockinrecords)
