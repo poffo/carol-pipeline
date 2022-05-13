@@ -1,6 +1,6 @@
  with a as (
     select [
-    struct("5050" as devicecode, "test" as appname, "asdadadsasd" as piscode, current_datetime() as eventdatestr)
+    struct("5050" as devicecode, "test" as appname, "asdadadsasd" as piscode, current_datetime() as eventdatestr, "" as __mdmId, "" as __mdmTenantId, 0 as __mdmCounterForEntity, ARRAY[""] as __mdmStagingRecordIds, "" as __mdmCrosswalk, ARRAY[""] as __mdmSourceEntityNames, "blable" as __mdmTaskId, "" as __mdmSourceOperationTaskId)
     ] as clockinrecords
     ),
     c as (
