@@ -15,8 +15,8 @@
         select * from c
     )
 
-    select *,
-        piscode as __mdmId,
-        0 as __mdmCounterForEntity
+    select *
+--         piscode as __mdmId,
+--         0 as __mdmCounterForEntity
 
     from AC
