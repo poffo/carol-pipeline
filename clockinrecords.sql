@@ -10,8 +10,8 @@
             --timestamp-- WHERE stg.mdmCounterForEntity > {{start_from}}
     ),
     AC as (
-        select * except(clockinrecords) from a, unnest (clockinrecords)
-        union all
+--         select * except(clockinrecords) from a, unnest (clockinrecords)
+--         union all
         select * from c
     )
 
