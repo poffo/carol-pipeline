@@ -4,7 +4,7 @@
     ] as clockinrecords
     ),
     c as (
-        select deviceCode, appname, "na" as piscode, clockinDatetime eventdatestr,
+        select deviceCode, appname, "naaaa" as piscode, clockinDatetime eventdatestr,
              --metadata--
         from stg_clockinmobile_clockinrecords stg
             --timestamp-- WHERE stg.mdmCounterForEntity > {{start_from}}
