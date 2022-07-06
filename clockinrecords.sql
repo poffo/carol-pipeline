@@ -20,3 +20,4 @@
 --         0 as __mdmCounterForEntity
 
     from AC
+--teste
